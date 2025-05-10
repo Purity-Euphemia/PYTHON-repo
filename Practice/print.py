@@ -1,0 +1,1 @@
+print('int(5.2)', 'truncates 5.2', int(5.2))

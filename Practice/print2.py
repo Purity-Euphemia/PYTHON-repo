@@ -1,0 +1,1 @@
+print('Display "hi" in quotes')

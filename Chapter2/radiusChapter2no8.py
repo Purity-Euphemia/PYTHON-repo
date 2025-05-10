@@ -1,0 +1,7 @@
+radius = int(2)
+pi = float(3.14159)
+
+diameter = radius * 2
+circumference = 3.14159 * 3.14159 * 2
+area = 3.14159 * 2 ** 2
+print(area)
