@@ -1,0 +1,20 @@
+number1 = input('Enter a number: ')
+number2 = input('Enter a number: ')
+
+sum = int(sum)
+number1 + number2
+print('sum')
+
+average = int(average)
+number1 / number2
+print('average')
+
+product = int(product)
+number1 * number2
+print('product')
+
+min = int(min)
+print('min')
+
+max = int(max)
+print('max')
