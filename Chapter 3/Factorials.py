@@ -1,19 +1,14 @@
-factorial = 0
+factorial = 1
 
-for number in range(10):
-	number = int(input("Enter a nonnegative integer: "))
+number = int(input("Enter a nonnegative integer: "))
 
-	if (number < 0):
-		print("Wrong number")
+if (number < 0):
+	print("Wrong number")
+else:
+	for value in range(1, number + 1):
+		factorial = factorial * value
 
-
-	else:
-		counter = 1
-		while(counter != number):
-			factorial = factorial * counter
-
-
-	printf("the factorial %d", factorial * number)
+print(f'the factorial: ', factorial)
 
 	
 
