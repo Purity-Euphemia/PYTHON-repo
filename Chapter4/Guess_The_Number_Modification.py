@@ -1,23 +1,29 @@
-import random;
+import random
 print('Guess my number')
-num = (int(Math.randrange * 1001))
-	
-counter = 0;
-	
-while (computer != num and counter != 2) {
-print('Try again')
+computer = random.randrange (1, 11)
 
-if (computer == num) {
-print('correct')
-print("the number of guess", counter)
-}	
-	
-else if(num > computer) {
-println('Too high')
-}	
-	
-else if (num < computer) {
-println('Too low')
-}
-}
+while True:
+	num = int(input('Enter a number: '))
+	if (num < 1 or num > 10):
+		print('invalid number')
+	elif(num == computer):
+		print('correct')
+		print('Congratulation')
+		break
 
+	elif(num > computer):
+		print('Too high')
+
+	elif(num < computer):
+		print('Too low')
+
+answer = int(input('press 1 to continue or 0 to quit: '))
+if answer == 0:
+	print('Thanks for playing')
+
+elif answer == 1:
+	computer = random.randrange (1, 11)
+	print('\nNew game started!')
+else:
+	print('invalid input, qutting game')
+			
