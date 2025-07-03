@@ -3,6 +3,21 @@ class Account:
         self.name = name
         self.balance1 = balance1
 
+    #def st_value(self, value):
+       # self.name - value
+
+    def get_name(self):
+        return self.name
+
+    def sef_balance(self, amount):
+        if amount < 0:
+            raise ValueError('amount cannot be negative')
+        self.balance = amount
+
+
+    def get_balance(self):
+        return self.balance1
+
     def withdraw(self):
         self.balance1 += self.balance1
         print('Account withdrawn')
