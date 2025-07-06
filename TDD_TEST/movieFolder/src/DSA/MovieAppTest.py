@@ -1,5 +1,5 @@
 import unittest
-
+from operator import index
 
 from DSA.MovieApp import MovieApp
 
@@ -72,6 +72,21 @@ class TestMovieApp(unittest.TestCase):
         self.ratings.append([5, 3])
         self.assertEqual(len(self.ratings), initial_rating_count + 1)
         self.assertEqual(self.ratings[1], [5, 3])
+
+    def test_the_average_rating_of_a_movie(self):
+        self.movies.append("Moana")
+        self.ratings.append([5, 3])
+        index = self.movies.index("Moana")
+        average_rating = sum(self.ratings[index]) / len(self.ratings[index])
+        self.assertEqual(average_rating, 4.0)
+
+    def test_average_rating_of_all_the_movies(self):
+        self.movies.append("Moana")
+        self.ratings.append([5, 3])
+        all_ratings = [rating for sublist in self.ratings for rating in sublist]
+        average_rating = sum(all_ratings) / len(all_ratings)
+        self.assertEqual(average_rating, 4.25)
+
 
 
 
