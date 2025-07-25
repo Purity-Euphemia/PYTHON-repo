@@ -27,3 +27,14 @@ print(pattern8.findall(text))
 
 pattern9 = re.compile(r'[^0-9]+')
 print(pattern9.findall(text))
+
+text2 = """The boys link is Http://localhost/python code and the git address is hit http://king1234/git"""
+
+pattern10 = re.compile(r'([a-z]+)(://)(([a-z0-9]+)/([a-zA-Z0-9]+))',re.IGNORECASE)
+matches = pattern10.finditer(text2)
+for match in matches:
+    print(match.group(0))
+    print(match.group(1))
+    print(match.group(2))
+    print(match.group(3))
+    print(match.group(4))
