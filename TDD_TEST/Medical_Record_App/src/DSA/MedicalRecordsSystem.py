@@ -53,6 +53,15 @@ class MedicalRecordsSystem:
                 result.append(patient)
         return result
 
+    def search_doctor(self, doctor_name):
+        doctor_name = doctor_name.lower()
+        result = []
+        for doctor in self.doctors.values():
+            if doctor_name in doctor.name.lower() or doctor_name == doctor.doctor_id.lower():
+                result.append(doctor)
+        return result
+
+
 
 
 

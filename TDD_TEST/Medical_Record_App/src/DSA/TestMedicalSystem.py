@@ -38,17 +38,29 @@ class TestMedicalSystem(unittest.TestCase):
         result = self.medical_records_system.search_patient("Charlie")
         self.assertEqual(len(result), 1)
 
+    def test_search_doctor(self):
+        self.doctor1 = Doctor("P03", "Dr.Chris", "ENT", "08088887777", "Morning")
+        self.medical_records_system.add_doctor(self.doctor1)
+        result = self.medical_records_system.search_doctor("Dr.Chris")
+        self.assertEqual(len(result), 1)
 
+    def test_appointment_report(self):
+        self.medical_records_system = MedicalRecordsSystem()
 
+        self.patient = Patient("P04", "Daisy", "1995_04_04", "08066667777", "Surgeon")
+        self.doctor = Doctor("D04", "Dr.Felix", "Surgeon", "07055556666", "Morning")
 
+        self.medical_records_system.add_patient(self.patient)
+        self.medical_records_system.add_doctor(self.doctor)
 
+        time = datetime(2025, 9, 1, 12, 0)
 
+        self.medical_records_system.schedule_auto_appointment("A02", "P04", time, "Morning")
 
+        report = self.medical_records_system.get_appointments_report()
 
-
-
-
-
+        self.assertEqual(len(report), 1)
+        self.assertEqual(report[0]["Purpose"], "Surgeon")
 
 
 if __name__ == '__main__':
