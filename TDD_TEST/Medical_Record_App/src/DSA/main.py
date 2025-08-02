@@ -46,3 +46,14 @@ while True:
         except Exception as e:
             print("Error: ", e)
 
+    elif choice == "4":
+        print("Appointment Scheduled:")
+        for patient in MedicalRecordsSystem.get_appointments_report():
+            print(patient)
+
+    elif choice == "0":
+        break
+
+    else:
+        print("Invalid Choice")
+
