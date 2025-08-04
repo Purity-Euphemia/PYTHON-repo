@@ -41,5 +41,5 @@ class PhoneBook:
                 return True
         return False
 
-    def get_all_contact(self):
+    def get_all_contacts(self):
         return self.contacts
